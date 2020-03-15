@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose run migrations bundle exec rails db:create

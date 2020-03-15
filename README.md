@@ -1,24 +1,9 @@
-# README
+# radio.de API-Miner
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This tool queries the radio.de API every minute for the currently plaing song for each radio station.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Running with docker
+```bash
+docker-compose build
+docker-compose up -d
+```

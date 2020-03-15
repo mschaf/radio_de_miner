@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 20 } %>
+
+development:
+  <<: *default
+  database: radio_de_miner_development
+
+test:
+  <<: *default
+  database: radio_de_mier_test

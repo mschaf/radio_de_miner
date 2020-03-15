@@ -1,0 +1,9 @@
+node_modules
+.byebug_history
+.git
+tmp
+log
+Dockerfile
+docker-compose.yml
+database.yml
+database.yml.sample

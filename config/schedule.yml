@@ -1,0 +1,7 @@
+query_stations:
+  cron: "0 * * * *"
+  class: "StationUpdateWorker"
+
+query_plaing_songs:
+  cron: "* * * * *"
+  class: "UpdatePlayingSongsWorker"

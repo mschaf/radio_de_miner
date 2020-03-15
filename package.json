@@ -1,5 +1,5 @@
 {
-  "name": "radio_de_scraper",
+  "name": "radio_de_miner",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

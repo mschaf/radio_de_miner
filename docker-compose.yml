@@ -1,0 +1,50 @@
+version: '3.7'
+services:
+  appserver:
+    build:
+      context: .
+      target: appserver
+    image: radio_de_miner-appserver
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - redis
+      - postgres
+      - migrations
+    environment:
+      - POSTGRES_PASSWORD=123456
+
+  worker:
+    build:
+      context: .
+      target: worker
+    image: radio_de_miner-worker
+    restart: always
+    depends_on:
+      - redis
+      - postgres
+      - migrations
+    environment:
+      - POSTGRES_PASSWORD=123456
+
+  redis:
+    image: redis
+    restart: always
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=123456
+
+  migrations:
+    image: radio_de_miner-appserver
+    command: bundle exec rails db:migrate
+    depends_on:
+      - postgres
+    environment:
+      - RAILS_ENV=production
+      - POSTGRES_PASSWORD=123456
+
+
